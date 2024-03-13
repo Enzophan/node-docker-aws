@@ -1,7 +1,7 @@
 version: '3'
 services: 
     # app: 
-    #     container_name: node-ggcloud
+    #     container_name: 190715/node_aws_app
     #     restart: always
     #     build: .
     #     ports: 

@@ -1,0 +1,70 @@
+
+GET http://localhost:5050/api/users
+
+###
+
+POST http://localhost:5050/api/users/register
+content-type: application/json
+
+{
+    "username": "sampletest",
+    "email": "tester4.qup@gmail.com",
+    "password": "12345678"
+}
+
+###
+
+POST http://localhost:5050/api/users/login
+content-type: application/json
+
+{
+    "email": "tester4.qup@gmail.com",
+    "password": "12345678"
+}
+
+
+###
+GET http://localhost:5050/api/users/current
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyMi5xdXBAZ21haWwuY29tIiwiaWQiOjF9LCJpYXQiOjE2NzU4NzY0NzAsImV4cCI6MTY3NTg3NzM3MH0.BAHuCN9NKQKTNM79wulkUnxwBTEg1p86Ln-vtfbL9i0
+
+
+###
+GET http://localhost:5050/api/users/6
+
+###
+DELETE  http://localhost:5050/api/users/5
+
+
+###
+
+
+GET http://localhost:5050/api/v1/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyNC5xdXBAZ21haWwuY29tIiwiaWQiOjd9LCJpYXQiOjE3MTAzNTI5NTcsImV4cCI6MTcxMDM1Mzg1N30.IuJfVLF631t3-PMN_Vbx-7gxsINl4sNzXAAiOmZyqrw
+
+
+###
+
+POST http://localhost:5050/api/v1/todos
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyNC5xdXBAZ21haWwuY29tIiwiaWQiOjd9LCJpYXQiOjE3MTAzNTI5NTcsImV4cCI6MTcxMDM1Mzg1N30.IuJfVLF631t3-PMN_Vbx-7gxsINl4sNzXAAiOmZyqrw
+
+{
+    "title": "New title",
+    "description": "New description"
+}
+
+###
+
+PUT  http://localhost:5050/api/v1/todos/65f1ea7a628616268877900e
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyNC5xdXBAZ21haWwuY29tIiwiaWQiOjd9LCJpYXQiOjE3MTAzNTI5NTcsImV4cCI6MTcxMDM1Mzg1N30.IuJfVLF631t3-PMN_Vbx-7gxsINl4sNzXAAiOmZyqrw
+
+{
+    "title": "Test title 1",
+    "description": "Test description 1"
+}
+
+
+###
+DELETE  http://localhost:5050/api/v1/todos/65f1d41c39ddae82e8388865
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyMi5xdXBAZ21haWwuY29tIiwiaWQiOjF9LCJpYXQiOjE3MTAzNDcyNzQsImV4cCI6MTcxMDM0ODE3NH0.J_deMa13-s_ICVSkXOYVgHdWCTzmsp0P92Sa5i5q24E
