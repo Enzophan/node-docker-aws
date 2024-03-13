@@ -1,0 +1,35 @@
+
+GET http://localhost:5001/api/users
+
+###
+
+POST http://localhost:5001/api/users/register
+content-type: application/json
+
+{
+    "username": "sampletest",
+    "email": "tester3.qup@gmail.com",
+    "password": "12345678"
+}
+
+###
+
+POST http://localhost:5001/api/users/login
+content-type: application/json
+
+{
+    "email": "tester2.qup@gmail.com",
+    "password": "12345678"
+}
+
+
+###
+GET http://localhost:5001/api/users/current
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyMi5xdXBAZ21haWwuY29tIiwiaWQiOjF9LCJpYXQiOjE2NzU4NzY0NzAsImV4cCI6MTY3NTg3NzM3MH0.BAHuCN9NKQKTNM79wulkUnxwBTEg1p86Ln-vtfbL9i0
+
+
+###
+GET http://localhost:5001/api/users/6
+
+###
+DELETE  http://localhost:5001/api/users/5

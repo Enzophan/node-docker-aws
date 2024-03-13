@@ -1,0 +1,31 @@
+
+GET http://localhost:5001/api/v1/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyMi5xdXBAZ21haWwuY29tIiwiaWQiOjF9LCJpYXQiOjE3MTAzNDcyNzQsImV4cCI6MTcxMDM0ODE3NH0.J_deMa13-s_ICVSkXOYVgHdWCTzmsp0P92Sa5i5q24E
+
+
+###
+
+POST http://localhost:5001/api/v1/todos
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyMi5xdXBAZ21haWwuY29tIiwiaWQiOjF9LCJpYXQiOjE3MTAzNDcyNzQsImV4cCI6MTcxMDM0ODE3NH0.J_deMa13-s_ICVSkXOYVgHdWCTzmsp0P92Sa5i5q24E
+
+{
+    "title": "Test title",
+    "description": "Test description"
+}
+
+###
+
+PUT  http://localhost:5001/api/v1/todos/65f1d41c39ddae82e8388865
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyMi5xdXBAZ21haWwuY29tIiwiaWQiOjF9LCJpYXQiOjE3MTAzNDcyNzQsImV4cCI6MTcxMDM0ODE3NH0.J_deMa13-s_ICVSkXOYVgHdWCTzmsp0P92Sa5i5q24E
+
+{
+    "title": "Test title 1",
+    "description": "Test description 1"
+}
+
+
+###
+DELETE  http://localhost:5001/api/v1/todos/65f1d41c39ddae82e8388865
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoic2FtcGxldGVzdCIsImVtYWlsIjoidGVzdGVyMi5xdXBAZ21haWwuY29tIiwiaWQiOjF9LCJpYXQiOjE3MTAzNDcyNzQsImV4cCI6MTcxMDM0ODE3NH0.J_deMa13-s_ICVSkXOYVgHdWCTzmsp0P92Sa5i5q24E
