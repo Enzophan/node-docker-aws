@@ -8,22 +8,22 @@ jobs:
   build:
     runs-on: [ubuntu-latest]
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v3
-      - name: Login to docker hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build docker image
-        run: docker build -t enzo/node_aws_app .
-      -name: Publish image to docker hub
-        run: docker push enzo/node_aws_app:latest
+    - name: Checkout source
+      uses: actions/checkout@v3
+    - name: Login to docker hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+    - name: Build docker image
+      run: docker build -t enzo/node_aws_app .
+    -name: Publish image to docker hub
+      run: docker push enzo/node_aws_app:latest
 
   deploy:
     needs: build
     runs-on: [aws-ec2]
     steps: 
-      - name: Pull image from docker hub
-        run: docker pull enzo/node_aws_app:latest
-      - name: Delete old container
-        run: docker rm -f nodejs-app-container
-      - name: Run Docker container
-        run: docker run -d -p 5050:5050 -name nodejs-app-container enzo/node_aws_app
+    - name: Pull image from docker hub
+      run: docker pull enzo/node_aws_app:latest
+    - name: Delete old container
+      run: docker rm -f nodejs-app-container
+    - name: Run Docker container
+      run: docker run -d -p 5050:5050 -name nodejs-app-container enzo/node_aws_app
