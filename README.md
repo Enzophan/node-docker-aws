@@ -7,3 +7,4 @@
 - With ENV $ docker run --env JWT_SECRET=EnvFromDocker -d -p 8001:8000 node_aws_app:1.0
 
 # node-docker-aws
+- $ Run AWS EC2 instance
