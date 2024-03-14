@@ -29,19 +29,15 @@ jobs:
         build-args: URL_MONGO_DB=${{ secrets.URL_MONGO_DB }}
         tags: 190715/node_aws_app:latest
 
-    # - name: Build docker image
-    #   uses: docker/build-push-action@v4
-    #   run: docker build -f Dockerfile -t 190715/node_aws_app .
-    # - name: Publish image to docker hub
-    #   run: docker push 190715/node_aws_app:latest
-
   deploy:
     needs: build
     runs-on: [aws-ec2]
     steps: 
     - name: Pull image from docker hub
       run: docker pull 190715/node_aws_app:latest
+
     - name: Delete old container
       run: docker rm -f nodejs-app-container
+      
     - name: Run Docker container
-      run: docker run -d -p 5050:5050 -name nodejs-app-container 190715/node_aws_app
+      run: docker run -d -p 5050:5050 --name nodejs-app-container 190715/node_aws_app
