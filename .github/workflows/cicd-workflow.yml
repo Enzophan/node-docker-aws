@@ -9,13 +9,28 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
     - name: Checkout source
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
+
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
     - name: Login to docker hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-    - name: Build docker image
-      run: docker build -t 190715/node_aws_app . -f Dockerfile
-    - name: Publish image to docker hub
-      run: docker push 190715/node_aws_app:latest
+
+    - name: Build and push
+      uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: 190715/node_aws_app:latest
+    # - name: Build docker image
+    #   uses: docker/build-push-action@v4
+    #   run: docker build -f Dockerfile -t 190715/node_aws_app .
+    # - name: Publish image to docker hub
+    #   run: docker push 190715/node_aws_app:latest
 
   deploy:
     needs: build
