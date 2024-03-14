@@ -24,6 +24,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: .
+        file: ./Dockerfile
         push: true
         tags: 190715/node_aws_app:latest
     # - name: Build docker image
