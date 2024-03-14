@@ -22,10 +22,10 @@ jobs:
 
     - name: Build and push
       uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: 190715/node_aws_app:latest
+      with:
+        context: .
+        push: true
+        tags: 190715/node_aws_app:latest
     # - name: Build docker image
     #   uses: docker/build-push-action@v4
     #   run: docker build -f Dockerfile -t 190715/node_aws_app .
